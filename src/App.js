@@ -1,23 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import Hello from './component/Hello';
+import Welcome from './component/Welcome';
 
 function App() {
-  const name = 'Lee';
-  const naver = {
-    name: '네이버',
-    url: 'http://naver.com'
-  }
   return (
     <div className="App">
-      <h1
-        style={{
-          color: '#f0f',
-          backgroundColor: 'green',
-        }}
-      >
-        Hello, {name}, <p> {2 + 3}</p>
-      </h1>
-      <a href={naver.url}>{naver.name}</a>
+      <Hello />
+      <Hello />
+      <Hello />
+      <Welcome />
     </div>
   );
 }
