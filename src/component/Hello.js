@@ -4,7 +4,7 @@ export default function Hello() {
 
     return (
         <div>
-            <h2 style={
+            <h1 style={
                 {
                     color: '#f00',
                     borderRight: '5px solid #000',
@@ -13,7 +13,7 @@ export default function Hello() {
                 }
             }>
                 Hello
-            </h2>
+            </h1>
             <div className={styles.box} >Hello</div>
         </div>);
 }
