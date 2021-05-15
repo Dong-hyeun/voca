@@ -1,30 +1,18 @@
 export default function Hello() {
+    let name = 'Abel';
 
-    function showName() {
-        console.log('Abel');
-    }
-    function showAge(age) {
-        console.log(age)
-    }
-    function showText(txt) {
-        console.log(txt)
+    function changeName() {
+        name = name === 'Abel' ? 'Jane' : 'Abel';
+        console.log(name)
+        //name 은 변경되었지만, DOM 이 업데이트가 안됨
+        //위 'Abel' 은 상태(state) 가 아닌 단순한 문자열(값)임
+        //위 값을 상태값으로 바꾸고, setState 함수를 사용하여
+        //상태값을 변경해야함 
     }
     return (
         <div>
-            <h1>Hello</h1>
-            <button onClick={showName}>Show name</button>
-            <button onClick={
-                () => {
-                    showAge(10)
-                }}
-            >
-                Show age
-            </button>
-            <input type="text" onChange={e => {
-                const txt = e.target.value;
-                showText(txt)
-            }}
-            />
-
+            <h1>state</h1>
+            <h2>{name}</h2>
+            <button onClick={changeName}>Change</button>
         </div>);
 }
