@@ -1,6 +1,7 @@
 import { useState } from "react"
 
-export default function World({ word }) {
+export default function World({ word: w }) {
+    const [word, setWord] = useState(w);
     const [isShow, setIsShow] = useState(false);
     const [isDone, setIsDone] = useState(word.isDone);
 
@@ -8,8 +9,40 @@ export default function World({ word }) {
         setIsShow(!isShow);
     }
 
+    //체크리스트(수정)
     function toggleDone() {
-        setIsDone(!isDone);
+        // setIsDone(!isDone);
+        fetch(`http://localhost:3001/words/${word.id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                ...word,
+                isDone: !isDone
+            }),
+        }).then(res => {
+            if (res.ok) { //응답이 OK이면, state 변경
+                setIsDone(!isDone)
+            }
+        })
+    }
+
+    //삭제버튼
+    function del() {
+        if (window.confirm('삭제 하시겠습니까?')) {
+            fetch(`http://localhost:3001/words/${word.id}`, {
+                method: 'DELETE'
+            }).then(res => {
+                if (res.ok) {
+                    setWord({ id: 0 })
+                }
+            })
+        }
+
+        if (word.id === 0) {
+            return null;
+        }
     }
 
     return (
@@ -27,7 +60,9 @@ export default function World({ word }) {
                 <button onClick={toggleShow}>
                     뜻 {isShow ? '숨기기' : '보기'}
                 </button>
-                <button className="btn_del">삭제</button>
+                <button className="btn_del" onClick={del}>
+                    삭제
+                </button>
             </td>
         </tr>
     )
