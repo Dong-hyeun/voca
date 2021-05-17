@@ -1,4 +1,4 @@
-//특정 날짜를 클릭시 단어들어나오는 페이지
+//특정 날짜를 클릭시 단어들이 나오는 페이지
 import { useParams } from 'react-router-dom';
 import useFetch from '../myHooks/useFetch';
 import World from './Word';
