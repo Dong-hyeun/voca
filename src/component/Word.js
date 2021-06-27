@@ -1,9 +1,11 @@
-import { useState } from "react"
+import { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 export default function World({ word: w }) {
     const [word, setWord] = useState(w);
     const [isShow, setIsShow] = useState(false);
     const [isDone, setIsDone] = useState(word.isDone);
+    const history = useHistory();
 
     function toggleShow() {
         setIsShow(!isShow);
@@ -35,7 +37,8 @@ export default function World({ word: w }) {
                 method: 'DELETE'
             }).then(res => {
                 if (res.ok) {
-                    setWord({ id: 0 })
+                    setWord({ id: 0 });
+                    history.push('/');
                 }
             })
         }

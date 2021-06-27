@@ -20,46 +20,25 @@
   ],
   "words": [
     {
-      "id": 5,
-      "day": 3,
-      "eng": "school",
-      "kor": "학교",
-      "isDone": false
-    },
-    {
-      "id": 6,
-      "day": 3,
-      "eng": "pencil",
-      "kor": "연필",
-      "isDone": false
-    },
-    {
-      "day": "3",
-      "eng": "window",
-      "kor": "창문",
-      "isDone": false,
-      "id": 7
-    },
-    {
-      "day": "2",
-      "eng": "house",
-      "kor": "집",
+      "day": "4",
+      "eng": "apply",
+      "kor": "사과",
       "isDone": false,
       "id": 8
     },
     {
       "day": "2",
-      "eng": "mouse",
-      "kor": "쥐",
+      "eng": "gift",
+      "kor": "선물",
       "isDone": false,
-      "id": 9
+      "id": 12
     },
     {
-      "day": "4",
-      "eng": "event",
-      "kor": "행사",
+      "day": "3",
+      "eng": "corn",
+      "kor": "농담",
       "isDone": false,
-      "id": 10
+      "id": 12
     }
   ]
 }
