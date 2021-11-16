@@ -10,4 +10,7 @@
 ## 2) word 추가 기능
 ## 3) 단어 뜻 감추기 
 
+## 사용한 기술
+## React, React-router, json-server
+
 ## 현재 이 프로젝트는 재구상중. 
